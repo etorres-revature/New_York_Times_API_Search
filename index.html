@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="./assets/images/favicon/home.png" />
-    <title>Document</title>
+    <link rel="icon" type="image/png" href="#" />
+    <title>New York Times Search</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css" />
@@ -62,48 +62,60 @@
         <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a> -->
     </div>
 
-    <form>
-        <div class="container">
-            <div class="card">
-                <div class="card-header">
-                    Search Parameters
+    <form></form>
+    <div class="card">
+        <div class="card-header">
+            Search Parameters
+        </div>
+        <div class="card-body">
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="inputSearchTerms">Search Terms:</label>
+                    <input type="text" class="form-control" id="inputSearchTerms">
                 </div>
-                <div class="card-body">
-                    <div class="form-row">
-                        <div class="form-group col-md-12">
-                            <label for="inputSearchTerms">Search Terms:</label>
-                            <input type="text" class="form-control" id="inputSearchTerms">
-                        </div>
-                        <div class="form-group col-md-12">
-                            <label for="inputNumber">Number of Recrods to Retrieve:</label>
-                            <select id="inputNumber" class="form-control">
-                                <option selected>Choose...</option>
-                                <option>5</option>
-                                <option>10</option>
-                                <option>15</option>
-                                <option>20</option>
-                                <option>25</option>
-                            </select>
-                        </div>
-                        <div class="form-group col-md-12">
-                            <label for="inputStartYear">Start Year (optional):</label>
-                            <input type="text" class="form-control" id="inputStartYear" placeholder="YYYY">
-                        </div>
-                        <div class="form-group col-md-12">
-                            <label for="inputEndYear">End Year (optional):</label>
-                            <input type="text" class="form-control" id="inputEndYear" placeholder="YYYY">
-                        </div>
-                    </div>
-                    <div class="float-left">
-                        <button type="submit" class="btn btn-primary">Search</button>
-                    </div>
-                    <div class="float-right">
-                        <button type="submot" class="btn btn-success">Clear</button>
-                    </div>
+                <div class="form-group col-md-12">
+                    <label for="inputNumber">Number of Recrods to Retrieve:</label>
+                    <select id="inputNumber" class="form-control">
+                        <option id="numSelected" selected>Choose...</option>
+                        <option>5</option>
+                        <option>10</option>
+                        <option>15</option>
+                        <option>20</option>
+                        <option>25</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="inputStartYear">Start Year (optional):</label>
+                    <input type="text" class="form-control" id="inputStartYear" placeholder="YYYY">
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="inputEndYear">End Year (optional):</label>
+                    <input type="text" class="form-control" id="inputEndYear" placeholder="YYYY">
                 </div>
             </div>
+            <div class="float-left">
+                <button id="search" type="submit" class="btn btn-primary">Search</button>
+            </div>
+            <div class="float-right">
+                <button id="clear" type="submot" class="btn btn-success">Clear</button>
+            </div>
         </div>
+    </div>
     </form>
+
+    <br>
+    <br>
+
+    <div class="container">
+        <div class="card">
+            <h5 class="card-header">TOP STORIES</h5>
+            <div class="card-body">
+                <!-- <h5 class="card-title">Special title treatment</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a> -->
+            </div>
+        </div>
+    </div>
 
     <div class="w-100" style="height: 100px"></div>
 
@@ -140,10 +152,8 @@
         </div>
     </footer>
 
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
         integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
         crossorigin="anonymous"></script>
