@@ -71,17 +71,17 @@
             <div class="form-row">
                 <div class="form-group col-md-12">
                     <label for="inputSearchTerms">Search Terms:</label>
-                    <input type="text" class="form-control" id="inputSearchTerms">
+                    <input type="text" class="form-control" id="inputSearchTerms" placeholder="Enter search terms here">
                 </div>
                 <div class="form-group col-md-12">
                     <label for="inputNumber">Number of Recrods to Retrieve:</label>
                     <select id="inputNumber" class="form-control">
                         <option id="numSelected" selected>Choose...</option>
-                        <option>5</option>
-                        <option>10</option>
-                        <option>15</option>
-                        <option>20</option>
-                        <option>25</option>
+                        <option value="1">1</option>
+                        <option value="3">3</option>
+                        <option value="5" selected>5</option>
+                        <option value="8">8</option>
+                        <option value="10">10</option>
                     </select>
                 </div>
                 <div class="form-group col-md-12">
@@ -109,10 +109,12 @@
     <div class="container">
         <div class="card">
             <h5 class="card-header">TOP STORIES</h5>
-            <div class="card-body">
-                <!-- <h5 class="card-title">Special title treatment</h5>
+            <div class="card-body articles">
+                <ul class="list-group list-group-flush">
+                    <!-- <h5 class="card-title">Special title treatment</h5>
           <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
           <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                </ul>
             </div>
         </div>
     </div>

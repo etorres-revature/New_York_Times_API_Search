@@ -1,38 +1,67 @@
-var apiKey = "1Y1w9yctnCuWpZljCPIwpQAXB3CLCw7z"
-var beginDate = "1851";
-var endDate = "2020";
-var queryURL = `https://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=${beginDate}0101&end_date=${endDate}0101&q=trump&api-key=${apiKey}`;
+const apiKey = "1Y1w9yctnCuWpZljCPIwpQAXB3CLCw7z"
+let searchTerms = "";
+let numResults = 0;
+let beginDate = "1851";
+let endDate = "2020";
+let queryURLBase = `https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=${apiKey}`;
 
-$("#search").on("click", function(){
+var articleCounter = 0;
+
+$("#search").on("click", function () {
     event.preventDefault();
 
+    searchTerms = $("#inputSearchTerms").val().trim();
+    // console.log(searchTerms);
+    let searchURL = queryURLBase + "&q=" + searchTerms;
+    // console.log(searchURL);
+    beginDate = $("#inputStartYear").val().trim();
+    endDate = $("#inputEndYear").val().trim();
+
+    if (parseInt(beginDate)) {
+        searchURL = queryURLBase + "&begin_date=" + beginDate + "0101";
+        // console.log(searchURL);
+    }
+
+    if (parseInt(endDate)) {
+        searchURL = queryURLBase + "&end_date=" + endDate + "1231";
+        // console.log(searchURL);
+    }
+
+    numResults = $("#inputNumber").val();
+    // console.log(numResults);
+
     $.ajax({
-        url: queryURL,
+        url: searchURL,
         method: "GET"
     })
-    
-    .then(function(response){
-        console.log(response);
 
-        // let results = response.docs;
-        // console.log(results);
+        .then(function (dataFromNYT) {
+            // console.log(dataFromNYT.response.docs[0].abstract);
+            // console.log(dataFromNYT.response.docs[0].web_url);
+            // console.log(dataFromNYT.response.docs[0].headline.main);
 
-        for (var i = 0; i < response.docs.length; i++) {
-            console.log("in the for loop")
-            var articleDiv = $("<div>");
+            // let results = response.docs;
+            // console.log(results);
 
-            var headline = response.docs[i].headline.main;
+            for (var i = 1; i <= numResults; i++) {
+                // console.log("in the for loop")
+                var articleUL = $("<div>").addClass("card-body").attr("id", "card-body-" + i).css("list-style-type", "none");
 
-            var abstract = response.docs[i].abstract;
+                var headline = dataFromNYT.response.docs[i].headline.main;
+                var abstract = dataFromNYT.response.docs[i].abstract;
+                var webURL = dataFromNYT.response.docs[i].web_url;
+                var pHeadline = $("<h4>").text(headline);
+                var aURL = $("<a>").attr("href", webURL).text(webURL)
+                var pAbstract = $("<p>").text(abstract);
 
-            var pHeadline = $("<p>").text(headline);
-            var pAbstract = $("<p>").text(abstract);
 
-            articleDiv.append(pHeadline);
-            articleDiv.append(pAbstract);
+                articleUL.append(pHeadline);
+                articleUL.append(aURL);
+                articleUL.append(pAbstract);
+                articleUL.append("<hr>");
 
-            $(".card-body").append(articleDev);
-        }
-    });
+                $(".list-group-flush").append(articleUL);
+            }
+        });
 
 });
