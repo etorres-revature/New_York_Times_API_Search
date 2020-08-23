@@ -77,4 +77,7 @@ $("#search").on("click", function () {
 $("#clear").on("click", function(){
 event.preventDefault();
 $(".articles").empty();
+// $("#inputSearchTerms").val("");
+// $("#inputStartYear").val("");
+// $("#inputEndYear").val("");
 })
