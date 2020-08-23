@@ -50,6 +50,11 @@ h3 {
     position: relative;
 }
 
+img {
+    height: 50px;
+    width: 50px;
+}
+
 /* .display-4 {
     font-family: 'Diplomata SC', cursive;
     color: slategray;
