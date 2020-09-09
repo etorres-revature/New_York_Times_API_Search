@@ -1,4 +1,4 @@
-# [New_York_Times_API_Search](https://etorres-revature.github.io/New_York_Times_API_Search/)
+# [New York TimesA PI Search](https://etorres-revature.github.io/New_York_Times_API_Search/)
 
 The New York Times (NYT) is an American newspaper based in New York City with worldwide influence and leadership.  Founded in 1851, the paper has won 130 Pulitzer Prizes, more than any other newspaper.  It is ranked 18th in the world by circulation and 3rd in the United States.  NYT's motto is "All the news that's fit to print."<a href="#footnote1"><sup>[1]</sup></a>
 
