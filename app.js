@@ -1,3 +1,4 @@
+//video link for project - https://www.youtube.com/watch?v=RQTVw6XJAac&feature=youtu.be&list=PLgJ8UgkiorCnCFzNp0dP0zJyeFAgstYTj
 const apiKey = "1Y1w9yctnCuWpZljCPIwpQAXB3CLCw7z";
 let searchTerms = "";
 let numResults = 0;
@@ -35,8 +36,7 @@ $("#search").on("click", function () {
   $.ajax({
     url: searchURL,
     method: "GET",
-  })
-  .then(function (dataFromNYT) {
+  }).then(function (dataFromNYT) {
     // console.log(dataFromNYT.response.docs[0].abstract);
     // console.log(dataFromNYT.response.docs[0].web_url);
     // console.log(dataFromNYT.response.docs[0].headline.main);
