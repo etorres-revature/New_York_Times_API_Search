@@ -1,4 +1,5 @@
 //video link for project - https://www.youtube.com/watch?v=RQTVw6XJAac&feature=youtu.be&list=PLgJ8UgkiorCnCFzNp0dP0zJyeFAgstYTj
+//video link for project - https://www.youtube.com/watch?v=QiIlhmeGYuk
 const apiKey = "1Y1w9yctnCuWpZljCPIwpQAXB3CLCw7z";
 let searchTerms = "";
 let numResults = 0;
